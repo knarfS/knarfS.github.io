@@ -1421,11 +1421,11 @@ and creates the default tab for the device:</p>
 <span class="keyword">import</span> <span class="include">time</span>
 
 <span class="comment"># Connect device.</span>
-dmm_dev = Session.connect_device(<span class="error">\</span><span class="string"><span class="delimiter">&quot;</span><span class="content">hp-3478a:conn=libgpib/hp3478a</span><span class="char">\&quot;</span><span class="content">)[0]</span></span>
+dmm_dev = Session.connect_device(<span class="string"><span class="delimiter">&quot;</span><span class="content">hp-3478a:conn=libgpib/hp3478a</span><span class="delimiter">&quot;</span></span>)[<span class="integer">0</span>]
 <span class="comment"># Sleep 1s to give the devices the chance to create signals</span>
 time.sleep(<span class="integer">1</span>)
 <span class="comment"># Get last sample from channel P1</span>
-sample = dmm_dev.channels()[<span class="error">\</span><span class="string"><span class="delimiter">&quot;</span><span class="content">P1</span><span class="char">\&quot;</span><span class="content">].actual_signal().get_last_sample(True)</span></span>
+sample = dmm_dev.channels()[<span class="string"><span class="delimiter">&quot;</span><span class="content">P1</span><span class="delimiter">&quot;</span></span>].actual_signal().get_last_sample(<span class="predefined-constant">True</span>)
 print(sample)
 
 <span class="comment"># Add default tab for the DMM device.</span>
