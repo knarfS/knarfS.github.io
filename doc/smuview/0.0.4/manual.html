@@ -1364,8 +1364,17 @@ yet, but it is accesible over the <em>Add View</em> dialog in the device tab.</p
 <h2 id="smuscript">7. SmuScript</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>SmuView can execute python scripts to automate processes, control devices,
-process incoming data and manipulate the GUI.</p>
+<p>SmuView has a python scripting extension to automate, setup and control complex
+or repetitive measurements, to process the incoming data and to create a
+standardized user interface for those measurements.</p>
+</div>
+<div class="paragraph">
+<p>The smuview module offers two default object instances: <code>Session</code> and <code>UiProxy</code>.
+The <code>Session</code> object gives access to already connected devices or connects new
+devices. The returned device object can then be used to read data from the
+device or control the device.
+The <code>UiProxy</code> object instance is used to modify the user interface, for example
+adding tabs or views.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1380,7 +1389,8 @@ Only one script can be executed at a time!
 </table>
 </div>
 <div class="paragraph">
-<p>You can find an API documentation <a href="https://sigrok.org/smuview_api.html">here</a> and example scripts in the <code>smuscript</code> folder.</p>
+<p>You can find an API documentation <a href="https://knarfs.github.io/doc/smuview/0.0.4/python_bindings_api.html">here</a>
+and example scripts in the <code>smuscript</code> folder.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1400,6 +1410,31 @@ Only one script can be executed at a time!
 <span class="image"><img src="./images/numbers/10.png" alt="10" width="22" height="22"></span> Execute script file.<br>
 <span class="image"><img src="./images/numbers/11.png" alt="11" width="22" height="22"></span> Scroll to bottom.<br>
 <span class="image"><img src="./images/numbers/12.png" alt="11" width="22" height="22"></span> Clear output window.</p>
+</div>
+<div class="paragraph">
+<p>The following short example connects the HP 3378A DMM via GPIB, reads a sample
+and creates the default tab for the device:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="python"><span class="keyword">import</span> <span class="include">smuview</span>
+<span class="keyword">import</span> <span class="include">time</span>
+
+<span class="comment"># Connect device.</span>
+dmm_dev = Session.connect_device(<span class="error">\</span><span class="string"><span class="delimiter">&quot;</span><span class="content">hp-3478a:conn=libgpib/hp3478a</span><span class="char">\&quot;</span><span class="content">)[0]</span></span>
+<span class="comment"># Sleep 1s to give the devices the chance to create signals</span>
+time.sleep(<span class="integer">1</span>)
+<span class="comment"># Get last sample from channel P1</span>
+sample = dmm_dev.channels()[<span class="error">\</span><span class="string"><span class="delimiter">&quot;</span><span class="content">P1</span><span class="char">\&quot;</span><span class="content">].actual_signal().get_last_sample(True)</span></span>
+print(sample)
+
+<span class="comment"># Add default tab for the DMM device.</span>
+UiProxy.add_device_tab(dmm_dev)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following more complex example script from the <code>smuscript</code> folder
+characterizes a battery and plots the resulting graph:</p>
 </div>
 <div class="listingblock">
 <div class="title">example_characterize_battery.py</div>
