@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>smuview API documentation</title>
-<meta name="description" content="The SmuView 0.0.6-git-7ded936 Python bindings …" />
+<meta name="description" content="The SmuView 0.0.6-git-54cf16b Python bindings …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,7 +22,7 @@
 <h1 class="title">Module <code>smuview</code></h1>
 </header>
 <section id="section-intro">
-<p>The SmuView 0.0.6-git-7ded936 Python bindings.</p>
+<p>The SmuView 0.0.6-git-54cf16b Python bindings.</p>
 <p>The Python bindings are a scripting extension for SmuView to automate, setup and control complex or repetitive measurements, to process the incoming data and to create a standardized user interface for those measurements.</p>
 <p>The smuview module offers two default object instances: <code><a title="smuview.Session" href="#smuview.Session">Session</a></code> and <code><a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a></code>.
 The <code><a title="smuview.Session" href="#smuview.Session">Session</a></code> object gives access to already connected devices or connects new devices. The returned device object can then be used to read data from the device or control the device.
@@ -1621,11 +1621,11 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="smuview.UiProxy.add_control_view"><code class="name flex">
-<span>def <span class="ident">add_control_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>, configurable: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>) ‑> str</span>
+<dt id="smuview.UiProxy.add_control_views"><code class="name flex">
+<span>def <span class="ident">add_control_views</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>, configurable: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>) ‑> List[str]</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Add a control view for a configurable to the given tab.</p>
+<div class="desc"><p>Add one or more control views for a configurable to the given tab.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>tab_id</code></strong> :&ensp;<code>str</code></dt>
@@ -1637,8 +1637,8 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>str</code></dt>
-<dd>The id of the new view or empty if the view couldn't be added.</dd>
+<dt><code>List[str]</code></dt>
+<dd>A List with the ids of the new views or an empty list if no control views were added.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_curve_to_time_plot_view"><code class="name flex">
@@ -2538,7 +2538,7 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 <li>
 <h4><code><a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a></code></h4>
 <ul class="">
-<li><code><a title="smuview.UiProxy.add_control_view" href="#smuview.UiProxy.add_control_view">add_control_view</a></code></li>
+<li><code><a title="smuview.UiProxy.add_control_views" href="#smuview.UiProxy.add_control_views">add_control_views</a></code></li>
 <li><code><a title="smuview.UiProxy.add_curve_to_time_plot_view" href="#smuview.UiProxy.add_curve_to_time_plot_view">add_curve_to_time_plot_view</a></code></li>
 <li><code><a title="smuview.UiProxy.add_curve_to_xy_plot_view" href="#smuview.UiProxy.add_curve_to_xy_plot_view">add_curve_to_xy_plot_view</a></code></li>
 <li><code><a title="smuview.UiProxy.add_data_view" href="#smuview.UiProxy.add_data_view">add_data_view</a></code></li>
