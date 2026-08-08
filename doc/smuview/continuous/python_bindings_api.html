@@ -2,18 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.10.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
 <title>smuview API documentation</title>
-<meta name="description" content="The SmuView 0.0.6-git-a8e3784 Python bindings …" />
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
-<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
-<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
-<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<meta name="description" content="The SmuView 0.0.6-git-3e46688 Python bindings …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
-<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
 </head>
 <body>
 <main>
@@ -22,7 +36,7 @@
 <h1 class="title">Module <code>smuview</code></h1>
 </header>
 <section id="section-intro">
-<p>The SmuView 0.0.6-git-a8e3784 Python bindings.</p>
+<p>The SmuView 0.0.6-git-3e46688 Python bindings.</p>
 <p>The Python bindings are a scripting extension for SmuView to automate, setup and control complex or repetitive measurements, to process the incoming data and to create a standardized user interface for those measurements.</p>
 <p>The smuview module offers two default object instances: <code><a title="smuview.Session" href="#smuview.Session">Session</a></code> and <code><a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a></code>.
 The <code><a title="smuview.Session" href="#smuview.Session">Session</a></code> object gives access to already connected devices or connects new devices. The returned device object can then be used to read data from the device or control the device.
@@ -67,10 +81,11 @@ UiProxy.add_device_tab(dmm_dev)
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.AnalogSampleSignal.get_sample"><code class="name flex">
-<span>def <span class="ident">get_sample</span></span>(<span>self: <a title="smuview.AnalogSampleSignal" href="#smuview.AnalogSampleSignal">AnalogSampleSignal</a>, pos: int) ‑> Tuple[int, float]</span>
+<span>def <span class="ident">get_sample</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Return the sample for the given position.</p>
+<div class="desc"><p>get_sample(self: smuview.AnalogSampleSignal, pos: typing.SupportsInt | typing.SupportsIndex) -&gt; tuple[int, float]</p>
+<p>Return the sample for the given position.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>pos</code></strong> :&ensp;<code>int</code></dt>
@@ -83,10 +98,11 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.AnalogSampleSignal.push_sample"><code class="name flex">
-<span>def <span class="ident">push_sample</span></span>(<span>self: <a title="smuview.AnalogSampleSignal" href="#smuview.AnalogSampleSignal">AnalogSampleSignal</a>, sample: None, pos: int, unit_size: int, digits: int, decimal_places: int)</span>
+<span>def <span class="ident">push_sample</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Push a new sample to the signal.</p>
+<div class="desc"><p>push_sample(self: smuview.AnalogSampleSignal, sample: typing_extensions.CapsuleType, pos: typing.SupportsInt | typing.SupportsIndex, unit_size: typing.SupportsInt | typing.SupportsIndex, digits: typing.SupportsInt | typing.SupportsIndex, decimal_places: typing.SupportsInt | typing.SupportsIndex) -&gt; None</p>
+<p>Push a new sample to the signal.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>sample</code></strong> :&ensp;<code>float</code> or <code>double</code></dt>
@@ -127,7 +143,7 @@ UiProxy.add_device_tab(dmm_dev)
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.AnalogTimeSignal.get_last_sample"><code class="name flex">
-<span>def <span class="ident">get_last_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>, relative_time: bool) ‑> Tuple[float, float]</span>
+<span>def <span class="ident">get_last_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>,<br>relative_time: bool)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the last sample of the signal.</p>
@@ -143,10 +159,11 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.AnalogTimeSignal.get_sample"><code class="name flex">
-<span>def <span class="ident">get_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>, pos: int, relative_time: bool) ‑> Tuple[float, float]</span>
+<span>def <span class="ident">get_sample</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Return the sample at the given position.</p>
+<div class="desc"><p>get_sample(self: smuview.AnalogTimeSignal, pos: typing.SupportsInt | typing.SupportsIndex, relative_time: bool) -&gt; tuple[float, float]</p>
+<p>Return the sample at the given position.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>pos</code></strong> :&ensp;<code>int</code></dt>
@@ -161,10 +178,11 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.AnalogTimeSignal.push_sample"><code class="name flex">
-<span>def <span class="ident">push_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>, sample: None, timestamp: float, unit_size: int, digits: int, decimal_places: int)</span>
+<span>def <span class="ident">push_sample</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Push a new sample to the signal.</p>
+<div class="desc"><p>push_sample(self: smuview.AnalogTimeSignal, sample: typing_extensions.CapsuleType, timestamp: typing.SupportsFloat | typing.SupportsIndex, unit_size: typing.SupportsInt | typing.SupportsIndex, digits: typing.SupportsInt | typing.SupportsIndex, decimal_places: typing.SupportsInt | typing.SupportsIndex) -&gt; None</p>
+<p>Push a new sample to the signal.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>sample</code></strong> :&ensp;<code>float</code> or <code>double</code></dt>
@@ -209,7 +227,7 @@ UiProxy.add_device_tab(dmm_dev)
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.BaseChannel.actual_signal"><code class="name flex">
-<span>def <span class="ident">actual_signal</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>) ‑> <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a></span>
+<span>def <span class="ident">actual_signal</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the actual signal of the channel.</p>
@@ -220,7 +238,7 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.BaseChannel.add_signal"><code class="name flex">
-<span>def <span class="ident">add_signal</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>, quantity: <a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a>, quantity_flags: Set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>], unit: <a title="smuview.Unit" href="#smuview.Unit">Unit</a>, custom_name: str = '') ‑> <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a></span>
+<span>def <span class="ident">add_signal</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>,<br>quantity: <a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a>,<br>quantity_flags: Set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>],<br>unit: <a title="smuview.Unit" href="#smuview.Unit">Unit</a>,<br>custom_name: str = '')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add a new signal to the channel.</p>
@@ -242,7 +260,7 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.BaseChannel.name"><code class="name flex">
-<span>def <span class="ident">name</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>) ‑> str</span>
+<span>def <span class="ident">name</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the name of the channel.</p>
@@ -253,7 +271,7 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.BaseChannel.signals"><code class="name flex">
-<span>def <span class="ident">signals</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>) ‑> List[<a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a>]</span>
+<span>def <span class="ident">signals</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return all signals of the channel.</p>
@@ -283,7 +301,7 @@ UiProxy.add_device_tab(dmm_dev)
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.BaseDevice.add_user_channel"><code class="name flex">
-<span>def <span class="ident">add_user_channel</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>, channel_name: str, channel_group_name: str) ‑> <a title="smuview.UserChannel" href="#smuview.UserChannel">UserChannel</a></span>
+<span>def <span class="ident">add_user_channel</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>,<br>channel_name: str,<br>channel_group_name: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add a new user channel to the device.</p>
@@ -301,7 +319,7 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.BaseDevice.channels"><code class="name flex">
-<span>def <span class="ident">channels</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>) ‑> Dict[str, <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>]</span>
+<span>def <span class="ident">channels</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return all channels of the device.</p>
@@ -312,7 +330,7 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.BaseDevice.configurables"><code class="name flex">
-<span>def <span class="ident">configurables</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>) ‑> Dict[str, <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>]</span>
+<span>def <span class="ident">configurables</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return all configurables of the device.</p>
@@ -323,7 +341,7 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.BaseDevice.id"><code class="name flex">
-<span>def <span class="ident">id</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>) ‑> str</span>
+<span>def <span class="ident">id</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the unique id of the device.</p>
@@ -334,7 +352,7 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.BaseDevice.name"><code class="name flex">
-<span>def <span class="ident">name</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>) ‑> str</span>
+<span>def <span class="ident">name</span></span>(<span>self: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the name of the device.</p>
@@ -364,7 +382,7 @@ UiProxy.add_device_tab(dmm_dev)
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.BaseSignal.name"><code class="name flex">
-<span>def <span class="ident">name</span></span>(<span>self: <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a>) ‑> str</span>
+<span>def <span class="ident">name</span></span>(<span>self: <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the name of the signal.</p>
@@ -375,7 +393,7 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.BaseSignal.sample_count"><code class="name flex">
-<span>def <span class="ident">sample_count</span></span>(<span>self: <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a>) ‑> int</span>
+<span>def <span class="ident">sample_count</span></span>(<span>self: <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the number of samples of the signal.</p>
@@ -386,7 +404,7 @@ UiProxy.add_device_tab(dmm_dev)
 </dl></div>
 </dd>
 <dt id="smuview.BaseSignal.set_name"><code class="name flex">
-<span>def <span class="ident">set_name</span></span>(<span>self: <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a>, arg0: str)</span>
+<span>def <span class="ident">set_name</span></span>(<span>self: <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a>,<br>arg0: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Set a custom name for the signal.</p>
@@ -404,7 +422,7 @@ UiProxy.add_device_tab(dmm_dev)
 </code></dt>
 <dd>
 <div class="desc"><p>Enum of all available config keys for controlling a device.</p>
-<p><strong>init</strong>(self: smuview.ConfigKey, value: int) -&gt; None</p></div>
+<p><strong>init</strong>(self: smuview.ConfigKey, value: typing.SupportsInt | typing.SupportsIndex) -&gt; None</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>pybind11_builtins.pybind11_object</li>
@@ -730,13 +748,13 @@ over current protection (OCP) feature.</p></div>
 </dl>
 <h3>Instance variables</h3>
 <dl>
-<dt id="smuview.ConfigKey.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dt id="smuview.ConfigKey.name"><code class="name">prop <span class="ident">name</span> : str</code></dt>
 <dd>
-<div class="desc"><p>name(self: handle) -&gt; str</p></div>
+<div class="desc"></div>
 </dd>
-<dt id="smuview.ConfigKey.value"><code class="name">var <span class="ident">value</span></code></dt>
+<dt id="smuview.ConfigKey.value"><code class="name">prop <span class="ident">value</span></code></dt>
 <dd>
-<div class="desc"><p>(arg0: smuview.ConfigKey) -&gt; int</p></div>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -753,7 +771,7 @@ over current protection (OCP) feature.</p></div>
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.Configurable.get_bool_config"><code class="name flex">
-<span>def <span class="ident">get_bool_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>, config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>) ‑> bool</span>
+<span>def <span class="ident">get_bool_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>,<br>config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return a boolean value from the given config key.</p>
@@ -769,7 +787,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Configurable.get_double_config"><code class="name flex">
-<span>def <span class="ident">get_double_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>, config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>) ‑> float</span>
+<span>def <span class="ident">get_double_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>,<br>config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return a double value from the given config key.</p>
@@ -785,7 +803,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Configurable.get_int_config"><code class="name flex">
-<span>def <span class="ident">get_int_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>, config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>) ‑> int</span>
+<span>def <span class="ident">get_int_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>,<br>config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return an integer value from the given config key.</p>
@@ -801,7 +819,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Configurable.get_measured_quantity_config"><code class="name flex">
-<span>def <span class="ident">get_measured_quantity_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>, config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>) ‑> Tuple[<a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a>, Set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>]]</span>
+<span>def <span class="ident">get_measured_quantity_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>,<br>config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return a measured quantity value from the given config key.</p>
@@ -817,7 +835,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Configurable.get_string_config"><code class="name flex">
-<span>def <span class="ident">get_string_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>, config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>) ‑> str</span>
+<span>def <span class="ident">get_string_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>,<br>config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return a string value from the given config key.</p>
@@ -833,7 +851,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Configurable.get_uint_config"><code class="name flex">
-<span>def <span class="ident">get_uint_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>, config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>) ‑> int</span>
+<span>def <span class="ident">get_uint_config</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>,<br>config_key: <a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return an unsigned integer value from the given config key.</p>
@@ -849,7 +867,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Configurable.getable_configs"><code class="name flex">
-<span>def <span class="ident">getable_configs</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>) ‑> Set[<a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>]</span>
+<span>def <span class="ident">getable_configs</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return all getable config keys.</p>
@@ -860,7 +878,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Configurable.listable_configs"><code class="name flex">
-<span>def <span class="ident">listable_configs</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>) ‑> Set[<a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>]</span>
+<span>def <span class="ident">listable_configs</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return all listable config keys.</p>
@@ -871,7 +889,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Configurable.name"><code class="name flex">
-<span>def <span class="ident">name</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>) ‑> str</span>
+<span>def <span class="ident">name</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the name of the configurable.</p>
@@ -898,7 +916,7 @@ over current protection (OCP) feature.</p></div>
 <dd>The bool value to set.</dd>
 </dl>
 <ol>
-<li>set_config(self: smuview.Configurable, config_key: smuview.ConfigKey, value: int) -&gt; None</li>
+<li>set_config(self: smuview.Configurable, config_key: smuview.ConfigKey, value: typing.SupportsInt | typing.SupportsIndex) -&gt; None</li>
 </ol>
 <p>Set an integer value to the given config key.</p>
 <h2 id="parameters_1">Parameters</h2>
@@ -909,7 +927,7 @@ over current protection (OCP) feature.</p></div>
 <dd>The int value to set.</dd>
 </dl>
 <ol>
-<li>set_config(self: smuview.Configurable, config_key: smuview.ConfigKey, value: int) -&gt; None</li>
+<li>set_config(self: smuview.Configurable, config_key: smuview.ConfigKey, value: typing.SupportsInt | typing.SupportsIndex) -&gt; None</li>
 </ol>
 <p>Set an unsigned integer value to the given config key.</p>
 <h2 id="parameters_2">Parameters</h2>
@@ -920,7 +938,7 @@ over current protection (OCP) feature.</p></div>
 <dd>The (unsigned) int value to set.</dd>
 </dl>
 <ol>
-<li>set_config(self: smuview.Configurable, config_key: smuview.ConfigKey, value: float) -&gt; None</li>
+<li>set_config(self: smuview.Configurable, config_key: smuview.ConfigKey, value: typing.SupportsFloat | typing.SupportsIndex) -&gt; None</li>
 </ol>
 <p>Set a double value to the given config key.</p>
 <h2 id="parameters_3">Parameters</h2>
@@ -942,7 +960,7 @@ over current protection (OCP) feature.</p></div>
 <dd>The string value to set.</dd>
 </dl>
 <ol>
-<li>set_config(self: smuview.Configurable, config_key: smuview.ConfigKey, value: Tuple[smuview.Quantity, Set[smuview.QuantityFlag]]) -&gt; None</li>
+<li>set_config(self: smuview.Configurable, config_key: smuview.ConfigKey, value: tuple[smuview.Quantity, collections.abc.Set[smuview.QuantityFlag]]) -&gt; None</li>
 </ol>
 <p>Set a measured quantity value to the given config key.</p>
 <h2 id="parameters_5">Parameters</h2>
@@ -954,7 +972,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Configurable.setable_configs"><code class="name flex">
-<span>def <span class="ident">setable_configs</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>) ‑> Set[<a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>]</span>
+<span>def <span class="ident">setable_configs</span></span>(<span>self: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return all setable config keys.</p>
@@ -972,7 +990,7 @@ over current protection (OCP) feature.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Enum of all available data types.</p>
-<p><strong>init</strong>(self: smuview.DataType, value: int) -&gt; None</p></div>
+<p><strong>init</strong>(self: smuview.DataType, value: typing.SupportsInt | typing.SupportsIndex) -&gt; None</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>pybind11_builtins.pybind11_object</li>
@@ -1030,13 +1048,13 @@ over current protection (OCP) feature.</p></div>
 </dl>
 <h3>Instance variables</h3>
 <dl>
-<dt id="smuview.DataType.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dt id="smuview.DataType.name"><code class="name">prop <span class="ident">name</span> : str</code></dt>
 <dd>
-<div class="desc"><p>name(self: handle) -&gt; str</p></div>
+<div class="desc"></div>
 </dd>
-<dt id="smuview.DataType.value"><code class="name">var <span class="ident">value</span></code></dt>
+<dt id="smuview.DataType.value"><code class="name">prop <span class="ident">value</span></code></dt>
 <dd>
-<div class="desc"><p>(arg0: smuview.DataType) -&gt; int</p></div>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -1046,7 +1064,7 @@ over current protection (OCP) feature.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Enum of all possible docking locations for a view.</p>
-<p><strong>init</strong>(self: smuview.DockArea, value: int) -&gt; None</p></div>
+<p><strong>init</strong>(self: smuview.DockArea, value: typing.SupportsInt | typing.SupportsIndex) -&gt; None</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>pybind11_builtins.pybind11_object</li>
@@ -1072,13 +1090,13 @@ over current protection (OCP) feature.</p></div>
 </dl>
 <h3>Instance variables</h3>
 <dl>
-<dt id="smuview.DockArea.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dt id="smuview.DockArea.name"><code class="name">prop <span class="ident">name</span> : str</code></dt>
 <dd>
-<div class="desc"><p>name(self: handle) -&gt; str</p></div>
+<div class="desc"></div>
 </dd>
-<dt id="smuview.DockArea.value"><code class="name">var <span class="ident">value</span></code></dt>
+<dt id="smuview.DockArea.value"><code class="name">prop <span class="ident">value</span></code></dt>
 <dd>
-<div class="desc"><p>(arg0: smuview.DockArea) -&gt; int</p></div>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -1142,15 +1160,15 @@ over current protection (OCP) feature.</p></div>
 </ul>
 <h3>Instance variables</h3>
 <dl>
-<dt id="smuview.PyStreamBuf.closed"><code class="name">var <span class="ident">closed</span></code></dt>
+<dt id="smuview.PyStreamBuf.closed"><code class="name">prop <span class="ident">closed</span></code></dt>
 <dd>
 <div class="desc"><p><code>True</code> if the stream is closed.</p></div>
 </dd>
-<dt id="smuview.PyStreamBuf.encoding"><code class="name">var <span class="ident">encoding</span></code></dt>
+<dt id="smuview.PyStreamBuf.encoding"><code class="name">prop <span class="ident">encoding</span></code></dt>
 <dd>
 <div class="desc"><p>The name of the encoding that is used.</p></div>
 </dd>
-<dt id="smuview.PyStreamBuf.errors"><code class="name">var <span class="ident">errors</span></code></dt>
+<dt id="smuview.PyStreamBuf.errors"><code class="name">prop <span class="ident">errors</span></code></dt>
 <dd>
 <div class="desc"><p>The error setting of the decoder or encoder.</p></div>
 </dd>
@@ -1164,7 +1182,7 @@ over current protection (OCP) feature.</p></div>
 <div class="desc"><p>Flush and close this stream.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.fileno"><code class="name flex">
-<span>def <span class="ident">fileno</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>) ‑> int</span>
+<span>def <span class="ident">fileno</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> doesn't use a file descriptor.</p></div>
@@ -1176,73 +1194,78 @@ over current protection (OCP) feature.</p></div>
 <div class="desc"><p>Flush the write buffers of the stream.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.isatty"><code class="name flex">
-<span>def <span class="ident">isatty</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>) ‑> bool</span>
+<span>def <span class="ident">isatty</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Always returns <code>False</code>.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.read"><code class="name flex">
-<span>def <span class="ident">read</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>, size: int) ‑> str</span>
+<span>def <span class="ident">read</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is write only.</p></div>
+<div class="desc"><p>read(self: smuview.PyStreamBuf, size: typing.SupportsInt | typing.SupportsIndex) -&gt; str</p>
+<p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is write only.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.readable"><code class="name flex">
-<span>def <span class="ident">readable</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>) ‑> bool</span>
+<span>def <span class="ident">readable</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Always returns <code>False</code>.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.readline"><code class="name flex">
-<span>def <span class="ident">readline</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>, size: int) ‑> str</span>
+<span>def <span class="ident">readline</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is write only.</p></div>
+<div class="desc"><p>readline(self: smuview.PyStreamBuf, size: typing.SupportsInt | typing.SupportsIndex) -&gt; str</p>
+<p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is write only.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.readlines"><code class="name flex">
-<span>def <span class="ident">readlines</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>, hint: int) ‑> List[str]</span>
+<span>def <span class="ident">readlines</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is write only.</p></div>
+<div class="desc"><p>readlines(self: smuview.PyStreamBuf, hint: typing.SupportsInt | typing.SupportsIndex) -&gt; list[str]</p>
+<p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is write only.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.seek"><code class="name flex">
-<span>def <span class="ident">seek</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>, offset: int, whence: int) ‑> int</span>
+<span>def <span class="ident">seek</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is not seekable.</p></div>
+<div class="desc"><p>seek(self: smuview.PyStreamBuf, offset: typing.SupportsInt | typing.SupportsIndex, whence: typing.SupportsInt | typing.SupportsIndex) -&gt; int</p>
+<p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is not seekable.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.seekable"><code class="name flex">
-<span>def <span class="ident">seekable</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>) ‑> bool</span>
+<span>def <span class="ident">seekable</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Always returns <code>False</code>. <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is not seekable atm.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.tell"><code class="name flex">
-<span>def <span class="ident">tell</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>) ‑> int</span>
+<span>def <span class="ident">tell</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is not seekable.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.truncate"><code class="name flex">
-<span>def <span class="ident">truncate</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>, size: int) ‑> int</span>
+<span>def <span class="ident">truncate</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is not seekable.</p></div>
+<div class="desc"><p>truncate(self: smuview.PyStreamBuf, size: typing.SupportsInt | typing.SupportsIndex) -&gt; int</p>
+<p>Raises an <code>OSError</code>, because <code><a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a></code> is not seekable.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.writable"><code class="name flex">
-<span>def <span class="ident">writable</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>) ‑> bool</span>
+<span>def <span class="ident">writable</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Always return <code>True</code>.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.write"><code class="name flex">
-<span>def <span class="ident">write</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>, s: str) ‑> int</span>
+<span>def <span class="ident">write</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>,<br>s: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Write the string <code>s</code> to the stream and return the number of characters written.</p></div>
 </dd>
 <dt id="smuview.PyStreamBuf.writelines"><code class="name flex">
-<span>def <span class="ident">writelines</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>, lines: List[str])</span>
+<span>def <span class="ident">writelines</span></span>(<span>self: <a title="smuview.PyStreamBuf" href="#smuview.PyStreamBuf">PyStreamBuf</a>,<br>lines: Sequence[str])</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Write a list of lines to the stream.</p></div>
@@ -1255,7 +1278,7 @@ over current protection (OCP) feature.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Enum of all available quantities.</p>
-<p><strong>init</strong>(self: smuview.Quantity, value: int) -&gt; None</p></div>
+<p><strong>init</strong>(self: smuview.Quantity, value: typing.SupportsInt | typing.SupportsIndex) -&gt; None</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>pybind11_builtins.pybind11_object</li>
@@ -1409,13 +1432,13 @@ over current protection (OCP) feature.</p></div>
 </dl>
 <h3>Instance variables</h3>
 <dl>
-<dt id="smuview.Quantity.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dt id="smuview.Quantity.name"><code class="name">prop <span class="ident">name</span> : str</code></dt>
 <dd>
-<div class="desc"><p>name(self: handle) -&gt; str</p></div>
+<div class="desc"></div>
 </dd>
-<dt id="smuview.Quantity.value"><code class="name">var <span class="ident">value</span></code></dt>
+<dt id="smuview.Quantity.value"><code class="name">prop <span class="ident">value</span></code></dt>
 <dd>
-<div class="desc"><p>(arg0: smuview.Quantity) -&gt; int</p></div>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -1425,7 +1448,7 @@ over current protection (OCP) feature.</p></div>
 </code></dt>
 <dd>
 <div class="desc"><p>Enum of all available quantity flags.</p>
-<p><strong>init</strong>(self: smuview.QuantityFlag, value: int) -&gt; None</p></div>
+<p><strong>init</strong>(self: smuview.QuantityFlag, value: typing.SupportsInt | typing.SupportsIndex) -&gt; None</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>pybind11_builtins.pybind11_object</li>
@@ -1527,13 +1550,13 @@ over current protection (OCP) feature.</p></div>
 </dl>
 <h3>Instance variables</h3>
 <dl>
-<dt id="smuview.QuantityFlag.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dt id="smuview.QuantityFlag.name"><code class="name">prop <span class="ident">name</span> : str</code></dt>
 <dd>
-<div class="desc"><p>name(self: handle) -&gt; str</p></div>
+<div class="desc"></div>
 </dd>
-<dt id="smuview.QuantityFlag.value"><code class="name">var <span class="ident">value</span></code></dt>
+<dt id="smuview.QuantityFlag.value"><code class="name">prop <span class="ident">value</span></code></dt>
 <dd>
-<div class="desc"><p>(arg0: smuview.QuantityFlag) -&gt; int</p></div>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -1550,7 +1573,7 @@ over current protection (OCP) feature.</p></div>
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.Session.add_user_device"><code class="name flex">
-<span>def <span class="ident">add_user_device</span></span>(<span>self: <a title="smuview.Session" href="#smuview.Session">Session</a>) ‑> <a title="smuview.UserDevice" href="#smuview.UserDevice">UserDevice</a></span>
+<span>def <span class="ident">add_user_device</span></span>(<span>self: <a title="smuview.Session" href="#smuview.Session">Session</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Create a new user device.</p>
@@ -1561,7 +1584,7 @@ over current protection (OCP) feature.</p></div>
 </dl></div>
 </dd>
 <dt id="smuview.Session.connect_device"><code class="name flex">
-<span>def <span class="ident">connect_device</span></span>(<span>self: <a title="smuview.Session" href="#smuview.Session">Session</a>, conn_str: str) ‑> List[<a title="smuview.HardwareDevice" href="#smuview.HardwareDevice">HardwareDevice</a>]</span>
+<span>def <span class="ident">connect_device</span></span>(<span>self: <a title="smuview.Session" href="#smuview.Session">Session</a>,<br>conn_str: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Connect a new device. For some devices (like DMMs) you may want to wait a fixed time, until the first sample has arrived and an <code>AnalogSignal</code> object has been created. Example:</p>
@@ -1585,7 +1608,7 @@ time.sleep(1)
 </dl></div>
 </dd>
 <dt id="smuview.Session.devices"><code class="name flex">
-<span>def <span class="ident">devices</span></span>(<span>self: <a title="smuview.Session" href="#smuview.Session">Session</a>) ‑> Dict[str, <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>]</span>
+<span>def <span class="ident">devices</span></span>(<span>self: <a title="smuview.Session" href="#smuview.Session">Session</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return all connected devices.
@@ -1597,7 +1620,7 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl></div>
 </dd>
 <dt id="smuview.Session.remove_device"><code class="name flex">
-<span>def <span class="ident">remove_device</span></span>(<span>self: <a title="smuview.Session" href="#smuview.Session">Session</a>, device: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>)</span>
+<span>def <span class="ident">remove_device</span></span>(<span>self: <a title="smuview.Session" href="#smuview.Session">Session</a>,<br>device: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Close a device and remove it from the session. This will also delete all aquired data!</p>
@@ -1622,7 +1645,7 @@ The device id is an (in almost all cases) unique string containing the manufactu
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.UiProxy.add_control_views"><code class="name flex">
-<span>def <span class="ident">add_control_views</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>, configurable: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>) ‑> List[str]</span>
+<span>def <span class="ident">add_control_views</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>,<br>configurable: <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add one or more control views for a configurable to the given tab.</p>
@@ -1642,7 +1665,7 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_curve_to_time_plot_view"><code class="name flex">
-<span>def <span class="ident">add_curve_to_time_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, view_id: str, signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>) ‑> str</span>
+<span>def <span class="ident">add_curve_to_time_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>view_id: str,<br>signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add a signal to the given time plot view.</p>
@@ -1662,7 +1685,7 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_curve_to_xy_plot_view"><code class="name flex">
-<span>def <span class="ident">add_curve_to_xy_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, view_id: str, x_signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>, y_signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>) ‑> str</span>
+<span>def <span class="ident">add_curve_to_xy_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>view_id: str,<br>x_signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>,<br>y_signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add x/y signals to the given x/y plot view.</p>
@@ -1684,7 +1707,7 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_data_view"><code class="name flex">
-<span>def <span class="ident">add_data_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>, signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>) ‑> str</span>
+<span>def <span class="ident">add_data_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>,<br>signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add a data view for a signal to the given tab.</p>
@@ -1704,7 +1727,7 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_device_tab"><code class="name flex">
-<span>def <span class="ident">add_device_tab</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, device: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>) ‑> str</span>
+<span>def <span class="ident">add_device_tab</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>device: <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add a device tab with standard view for a device to the UI.</p>
@@ -1720,7 +1743,7 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_power_panel_view"><code class="name flex">
-<span>def <span class="ident">add_power_panel_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>, voltage_signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>, current_signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>) ‑> str</span>
+<span>def <span class="ident">add_power_panel_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>,<br>voltage_signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>,<br>current_signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add a power panel view for a voltage and a current signal to the given tab.</p>
@@ -1742,7 +1765,7 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_signal_to_data_view"><code class="name flex">
-<span>def <span class="ident">add_signal_to_data_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, view_id: str, signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>)</span>
+<span>def <span class="ident">add_signal_to_data_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>view_id: str,<br>signal: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add a signal to the given data view.</p>
@@ -1757,7 +1780,7 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_time_plot_view"><code class="name flex">
-<span>def <span class="ident">add_time_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>) ‑> str</span>
+<span>def <span class="ident">add_time_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add a time plot view to the given tab. Use <a href="UiProxy.set_channel_to_time_plot_view"><code>UiProxy.set_channel_to_time_plot_view()</code></a> to set a channel to the plot view or use <a href="UiProxy.add_curve_to_time_plot_view"><code>UiProxy.add_curve_to_time_plot_view()</code></a> to set a signal to the plot view.
@@ -1817,7 +1840,7 @@ When you have set a channel to the plot, new curves will be automatically create
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_xy_plot_view"><code class="name flex">
-<span>def <span class="ident">add_xy_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>) ‑> str</span>
+<span>def <span class="ident">add_xy_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>area: <a title="smuview.DockArea" href="#smuview.DockArea">DockArea</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Add a x/y plot view for two signals to the given tab. Use <a href="UiProxy.add_curve_to_xy_plot_view"><code>UiProxy.add_curve_to_xy_plot_view()</code></a> to add a new curve (a set of two signals) to the plot view.</p>
@@ -1835,7 +1858,7 @@ When you have set a channel to the plot, new curves will be automatically create
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.set_channel_to_time_plot_view"><code class="name flex">
-<span>def <span class="ident">set_channel_to_time_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, view_id: str, channel: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>)</span>
+<span>def <span class="ident">set_channel_to_time_plot_view</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>view_id: str,<br>channel: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Set a channel to the given time plot view. New curves will be automatically created, when the channel changes (e.g. for multimeters when switching functions).</p>
@@ -1850,10 +1873,11 @@ When you have set a channel to the plot, new curves will be automatically create
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.set_curve_color"><code class="name flex">
-<span>def <span class="ident">set_curve_color</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, view_id: str, curve_id: str, color: Tuple[int, int, int])</span>
+<span>def <span class="ident">set_curve_color</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Set the color of the given curve.</p>
+<div class="desc"><p>set_curve_color(self: smuview.UiProxy, tab_id: str, view_id: str, curve_id: str, color: tuple[typing.SupportsInt | typing.SupportsIndex, typing.SupportsInt | typing.SupportsIndex, typing.SupportsInt | typing.SupportsIndex]) -&gt; None</p>
+<p>Set the color of the given curve.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>tab_id</code></strong> :&ensp;<code>str</code></dt>
@@ -1867,7 +1891,7 @@ When you have set a channel to the plot, new curves will be automatically create
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.set_curve_name"><code class="name flex">
-<span>def <span class="ident">set_curve_name</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, tab_id: str, view_id: str, curve_id: str, name: str)</span>
+<span>def <span class="ident">set_curve_name</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>tab_id: str,<br>view_id: str,<br>curve_id: str,<br>name: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Set the name of the given curve.</p>
@@ -1884,10 +1908,11 @@ When you have set a channel to the plot, new curves will be automatically create
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.show_double_input_dialog"><code class="name flex">
-<span>def <span class="ident">show_double_input_dialog</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, title: str, label: str, value: float = 0.0, decimals: int = 1, step: float = 0.1, min: float = 2.2250738585072014e-308, max: float = 1.7976931348623157e+308) ‑> object</span>
+<span>def <span class="ident">show_double_input_dialog</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Show a dialog window to get a float value from the user. It returns the entered float value or <code>None</code> if the Cancel button was pressed.</p>
+<div class="desc"><p>show_double_input_dialog(self: smuview.UiProxy, title: str, label: str, value: typing.SupportsFloat | typing.SupportsIndex = 0.0, decimals: typing.SupportsInt | typing.SupportsIndex = 1, step: typing.SupportsFloat | typing.SupportsIndex = 0.1, min: typing.SupportsFloat | typing.SupportsIndex = 2.2250738585072014e-308, max: typing.SupportsFloat | typing.SupportsIndex = 1.7976931348623157e+308) -&gt; object</p>
+<p>Show a dialog window to get a float value from the user. It returns the entered float value or <code>None</code> if the Cancel button was pressed.</p>
 <p>Only has effect if the used Qt version is equal or greater than 5.10!</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
@@ -1915,10 +1940,11 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.show_int_input_dialog"><code class="name flex">
-<span>def <span class="ident">show_int_input_dialog</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, title: str, label: str, value: int = 0, step: int = 1, min: int = -2147483648, max: int = 2147483647) ‑> object</span>
+<span>def <span class="ident">show_int_input_dialog</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Show a dialog window to get an integer value from the user. It returns the entered float value or <code>None</code> if the Cancel button was pressed.</p>
+<div class="desc"><p>show_int_input_dialog(self: smuview.UiProxy, title: str, label: str, value: typing.SupportsInt | typing.SupportsIndex = 0, step: typing.SupportsInt | typing.SupportsIndex = 1, min: typing.SupportsInt | typing.SupportsIndex = -2147483648, max: typing.SupportsInt | typing.SupportsIndex = 2147483647) -&gt; object</p>
+<p>Show a dialog window to get an integer value from the user. It returns the entered float value or <code>None</code> if the Cancel button was pressed.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>title</code></strong> :&ensp;<code>str</code></dt>
@@ -1941,7 +1967,7 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.show_message_box"><code class="name flex">
-<span>def <span class="ident">show_message_box</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, title: str, text: str) ‑> bool</span>
+<span>def <span class="ident">show_message_box</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>title: str,<br>text: str)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Show a (info) message box with the given window title and text. Returns <code>True</code> when the Ok button was pressed.</p>
@@ -1959,7 +1985,7 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.show_string_input_dialog"><code class="name flex">
-<span>def <span class="ident">show_string_input_dialog</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>, title: str, label: str, value: str = '') ‑> object</span>
+<span>def <span class="ident">show_string_input_dialog</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>title: str,<br>label: str,<br>value: str = '')</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Show a dialog window to get a string value from the user. It returns the entered string value or <code>None</code> if the Cancel button was pressed.</p>
@@ -1986,7 +2012,7 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 </code></dt>
 <dd>
 <div class="desc"><p>Enum of all available units.</p>
-<p><strong>init</strong>(self: smuview.Unit, value: int) -&gt; None</p></div>
+<p><strong>init</strong>(self: smuview.Unit, value: typing.SupportsInt | typing.SupportsIndex) -&gt; None</p></div>
 <h3>Ancestors</h3>
 <ul class="hlist">
 <li>pybind11_builtins.pybind11_object</li>
@@ -2160,13 +2186,13 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 </dl>
 <h3>Instance variables</h3>
 <dl>
-<dt id="smuview.Unit.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dt id="smuview.Unit.name"><code class="name">prop <span class="ident">name</span> : str</code></dt>
 <dd>
-<div class="desc"><p>name(self: handle) -&gt; str</p></div>
+<div class="desc"></div>
 </dd>
-<dt id="smuview.Unit.value"><code class="name">var <span class="ident">value</span></code></dt>
+<dt id="smuview.Unit.value"><code class="name">prop <span class="ident">value</span></code></dt>
 <dd>
-<div class="desc"><p>(arg0: smuview.Unit) -&gt; int</p></div>
+<div class="desc"></div>
 </dd>
 </dl>
 </dd>
@@ -2184,10 +2210,11 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.UserChannel.push_sample"><code class="name flex">
-<span>def <span class="ident">push_sample</span></span>(<span>self: <a title="smuview.UserChannel" href="#smuview.UserChannel">UserChannel</a>, sample: float, timestamp: float, quantity: <a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a>, quantity_flags: Set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>], unit: <a title="smuview.Unit" href="#smuview.Unit">Unit</a>, digits: int, decimal_places: int)</span>
+<span>def <span class="ident">push_sample</span></span>(<span>...)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Push a single sample to the channel.</p>
+<div class="desc"><p>push_sample(self: smuview.UserChannel, sample: typing.SupportsFloat | typing.SupportsIndex, timestamp: typing.SupportsFloat | typing.SupportsIndex, quantity: smuview.Quantity, quantity_flags: collections.abc.Set[smuview.QuantityFlag], unit: smuview.Unit, digits: typing.SupportsInt | typing.SupportsIndex, decimal_places: typing.SupportsInt | typing.SupportsIndex) -&gt; None</p>
+<p>Push a single sample to the channel.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>sample</code></strong> :&ensp;<code>float</code></dt>
@@ -2247,7 +2274,6 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 </section>
 </article>
 <nav id="sidebar">
-<h1>Index</h1>
 <div class="toc">
 <ul></ul>
 </div>
@@ -2620,7 +2646,8 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
 </footer>
 </body>
 </html>
+
