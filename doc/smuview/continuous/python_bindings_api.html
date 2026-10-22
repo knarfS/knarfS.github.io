@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.7.3.dev245+g86b3e0e75">
 <title>smuview API documentation</title>
-<meta name="description" content="The SmuView 0.0.6-git-4bd6d5b Python bindings …">
+<meta name="description" content="The SmuView 0.0.6-git-b954688 Python bindings …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -36,7 +36,7 @@ el.replaceWith(d);
 <h1 class="title">Module <code>smuview</code></h1>
 </header>
 <section id="section-intro">
-<p>The SmuView 0.0.6-git-4bd6d5b Python bindings.</p>
+<p>The SmuView 0.0.6-git-b954688 Python bindings.</p>
 <p>The Python bindings are a scripting extension for SmuView to automate, setup and control complex or repetitive measurements, to process the incoming data and to create a standardized user interface for those measurements.</p>
 <p>The smuview module offers two default object instances: <code><a title="smuview.Session" href="#smuview.Session">Session</a></code> and <code><a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a></code>.
 The <code><a title="smuview.Session" href="#smuview.Session">Session</a></code> object gives access to already connected devices or connects new devices. The returned device object can then be used to read data from the device or control the device.
@@ -1029,6 +1029,10 @@ over current protection (OCP) feature.</p></div>
 <dd>
 <div class="desc"><p>String</p></div>
 </dd>
+<dt id="smuview.DataType.UInt32"><code class="name">var <span class="ident">UInt32</span></code></dt>
+<dd>
+<div class="desc"><p>UInt32</p></div>
+</dd>
 <dt id="smuview.DataType.UInt64"><code class="name">var <span class="ident">UInt64</span></code></dt>
 <dd>
 <div class="desc"><p>UInt64</p></div>
@@ -1312,9 +1316,9 @@ over current protection (OCP) feature.</p></div>
 <dd>
 <div class="desc"><p>Dissipation factor</p></div>
 </dd>
-<dt id="smuview.Quantity.DutyCyle"><code class="name">var <span class="ident">DutyCyle</span></code></dt>
+<dt id="smuview.Quantity.DutyCycle"><code class="name">var <span class="ident">DutyCycle</span></code></dt>
 <dd>
-<div class="desc"><p>DutyCyle</p></div>
+<div class="desc"><p>DutyCycle</p></div>
 </dd>
 <dt id="smuview.Quantity.ElectricCharge"><code class="name">var <span class="ident">ElectricCharge</span></code></dt>
 <dd>
@@ -2419,6 +2423,7 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 <li><code><a title="smuview.DataType.RationalPeriod" href="#smuview.DataType.RationalPeriod">RationalPeriod</a></code></li>
 <li><code><a title="smuview.DataType.RationalVolt" href="#smuview.DataType.RationalVolt">RationalVolt</a></code></li>
 <li><code><a title="smuview.DataType.String" href="#smuview.DataType.String">String</a></code></li>
+<li><code><a title="smuview.DataType.UInt32" href="#smuview.DataType.UInt32">UInt32</a></code></li>
 <li><code><a title="smuview.DataType.UInt64" href="#smuview.DataType.UInt64">UInt64</a></code></li>
 <li><code><a title="smuview.DataType.UInt64Range" href="#smuview.DataType.UInt64Range">UInt64Range</a></code></li>
 <li><code><a title="smuview.DataType.Unknown" href="#smuview.DataType.Unknown">Unknown</a></code></li>
@@ -2478,7 +2483,7 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 <li><code><a title="smuview.Quantity.Current" href="#smuview.Quantity.Current">Current</a></code></li>
 <li><code><a title="smuview.Quantity.Difference" href="#smuview.Quantity.Difference">Difference</a></code></li>
 <li><code><a title="smuview.Quantity.DissipationFactor" href="#smuview.Quantity.DissipationFactor">DissipationFactor</a></code></li>
-<li><code><a title="smuview.Quantity.DutyCyle" href="#smuview.Quantity.DutyCyle">DutyCyle</a></code></li>
+<li><code><a title="smuview.Quantity.DutyCycle" href="#smuview.Quantity.DutyCycle">DutyCycle</a></code></li>
 <li><code><a title="smuview.Quantity.ElectricCharge" href="#smuview.Quantity.ElectricCharge">ElectricCharge</a></code></li>
 <li><code><a title="smuview.Quantity.Energy" href="#smuview.Quantity.Energy">Energy</a></code></li>
 <li><code><a title="smuview.Quantity.Frequency" href="#smuview.Quantity.Frequency">Frequency</a></code></li>
