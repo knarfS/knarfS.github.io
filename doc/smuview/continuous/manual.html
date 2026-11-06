@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<meta name="author" content="Version 0.0.6-git-b954688, dated 2026-10-22">
+<meta name="author" content="Version 0.0.6-git-8f69337, dated 2026-11-06">
 <title>SmuView User Manual</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
@@ -832,7 +832,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1>SmuView User Manual</h1>
 <div class="details">
-<span id="author" class="author">Version 0.0.6-git-b954688, dated 2026-10-22</span><br>
+<span id="author" class="author">Version 0.0.6-git-8f69337, dated 2026-11-06</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1000,8 +1000,8 @@ which contains all required files and needs no installation:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>chmod u+x SmuView-0.0.6-git-b954688-x86_64.AppImage
-./SmuView0.0.6-git-b954688-x86_64.AppImage</pre>
+<pre>chmod u+x SmuView-0.0.6-git-8f69337-x86_64.AppImage
+./SmuView0.0.6-git-8f69337-x86_64.AppImage</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2028,8 +2028,8 @@ dmm_dev = Session.connect_device(<span class="string"><span class="delimiter">&q
 <span class="comment"># Sleep 1s to give the devices the chance to create signals</span>
 time.sleep(<span class="integer">1</span>)
 <span class="comment"># Get last sample from channel P1</span>
-sample = dmm_dev.channels()[<span class="string"><span class="delimiter">&quot;</span><span class="content">P1</span><span class="delimiter">&quot;</span></span>].actual_signal().get_last_sample(<span class="predefined-constant">True</span>)
-print(sample)
+sample = dmm_dev.channels()[<span class="string"><span class="delimiter">&quot;</span><span class="content">P1</span><span class="delimiter">&quot;</span></span>].current_signal().get_last_sample(<span class="predefined-constant">True</span>)
+print(<span class="string"><span class="delimiter">&quot;</span><span class="content">last sample = {0}</span><span class="delimiter">&quot;</span></span>.format(sample))
 
 <span class="comment"># Add default tab for the DMM device.</span>
 UiProxy.add_device_tab(dmm_dev)</code></pre>
@@ -2078,8 +2078,9 @@ value = <span class="integer">100</span>
 <span class="keyword">while</span> value &gt; <span class="float">0.5</span>:
     <span class="comment"># Take a reading every 2s and write it to the user channel</span>
     time_stamp = time.time()
-    value = dmm_device.channels()[<span class="string"><span class="delimiter">&quot;</span><span class="content">P1</span><span class="delimiter">&quot;</span></span>].actual_signal().get_last_sample(<span class="predefined-constant">True</span>)[<span class="integer">1</span>]
-    result_ch.push_sample(value, time_stamp, smuview.Quantity.Voltage, <span class="predefined">set</span>(), smuview.Unit.Volt, <span class="integer">6</span>, <span class="integer">5</span>)
+    sample = dmm_device.channels()[<span class="string"><span class="delimiter">&quot;</span><span class="content">P1</span><span class="delimiter">&quot;</span></span>].current_signal().get_last_sample(<span class="predefined-constant">True</span>)
+    <span class="keyword">if</span> sample <span class="keyword">is</span> <span class="keyword">not</span> <span class="predefined-constant">None</span>:
+        result_ch.push_sample(sample[<span class="integer">1</span>], time_stamp, smuview.Quantity.Voltage, <span class="predefined">set</span>(), smuview.Unit.Volt, <span class="integer">6</span>, <span class="integer">5</span>)
     time.sleep(<span class="integer">2</span>)
 
 <span class="comment"># Set device settings to a save state</span>
@@ -2185,7 +2186,7 @@ devices is often used in combination.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-10-22 21:07:32 UTC
+Last updated 2026-11-06 19:12:24 UTC
 </div>
 </div>
 </body>

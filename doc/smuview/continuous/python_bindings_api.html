@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.7.3.dev245+g86b3e0e75">
 <title>smuview API documentation</title>
-<meta name="description" content="The SmuView 0.0.6-git-b954688 Python bindings …">
+<meta name="description" content="The SmuView 0.0.6-git-8f69337 Python bindings …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
@@ -36,7 +36,7 @@ el.replaceWith(d);
 <h1 class="title">Module <code>smuview</code></h1>
 </header>
 <section id="section-intro">
-<p>The SmuView 0.0.6-git-b954688 Python bindings.</p>
+<p>The SmuView 0.0.6-git-8f69337 Python bindings.</p>
 <p>The Python bindings are a scripting extension for SmuView to automate, setup and control complex or repetitive measurements, to process the incoming data and to create a standardized user interface for those measurements.</p>
 <p>The smuview module offers two default object instances: <code><a title="smuview.Session" href="#smuview.Session">Session</a></code> and <code><a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a></code>.
 The <code><a title="smuview.Session" href="#smuview.Session">Session</a></code> object gives access to already connected devices or connects new devices. The returned device object can then be used to read data from the device or control the device.
@@ -50,8 +50,8 @@ dmm_dev = Session.connect_device(&quot;hp-3478a:conn=libgpib/hp3478a&quot;)[0]
 # Sleep 1s to give the devices the chance to create signals.
 time.sleep(1)
 # Get last sample from channel P1.
-sample = dmm_dev.channels()[&quot;P1&quot;].actual_signal().get_last_sample(True)
-print(sample)
+sample = dmm_dev.channels()[&quot;P1&quot;].current_signal().get_last_sample(True)
+print(&quot;last sample = {0}&quot;.format(sample))
 
 # Add default tab for the DMM device.
 UiProxy.add_device_tab(dmm_dev)
@@ -81,7 +81,7 @@ UiProxy.add_device_tab(dmm_dev)
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.AnalogSampleSignal.get_sample"><code class="name flex">
-<span>def <span class="ident">get_sample</span></span>(<span>self: <a title="smuview.AnalogSampleSignal" href="#smuview.AnalogSampleSignal">AnalogSampleSignal</a>,<br>pos: typing.SupportsInt | typing.SupportsIndex) ‑> tuple[int, float]</span>
+<span>def <span class="ident">get_sample</span></span>(<span>self: <a title="smuview.AnalogSampleSignal" href="#smuview.AnalogSampleSignal">AnalogSampleSignal</a>,<br>pos: typing.SupportsInt | typing.SupportsIndex) ‑> tuple[int, float] | None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the sample for the given position.</p>
@@ -92,23 +92,21 @@ UiProxy.add_device_tab(dmm_dev)
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>Tuple[int, float]</code></dt>
-<dd>The sample with 1. the key and 2. the sample value.</dd>
+<dt><code>tuple[int, float]</code> or <code>None</code></dt>
+<dd>The sample with the key (1) and the sample value (2) or <code>None</code> when there is no sample at <code>pos</code>.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.AnalogSampleSignal.push_sample"><code class="name flex">
-<span>def <span class="ident">push_sample</span></span>(<span>self: <a title="smuview.AnalogSampleSignal" href="#smuview.AnalogSampleSignal">AnalogSampleSignal</a>,<br>sample: Any,<br>pos: typing.SupportsInt | typing.SupportsIndex,<br>unit_size: typing.SupportsInt | typing.SupportsIndex,<br>digits: typing.SupportsInt | typing.SupportsIndex,<br>decimal_places: typing.SupportsInt | typing.SupportsIndex)</span>
+<span>def <span class="ident">push_sample</span></span>(<span>self: <a title="smuview.AnalogSampleSignal" href="#smuview.AnalogSampleSignal">AnalogSampleSignal</a>,<br>sample: typing.SupportsFloat | typing.SupportsIndex,<br>pos: typing.SupportsInt | typing.SupportsIndex,<br>digits: typing.SupportsInt | typing.SupportsIndex,<br>decimal_places: typing.SupportsInt | typing.SupportsIndex)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Push a new sample to the signal.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
-<dt><strong><code>sample</code></strong> :&ensp;<code>float</code> or <code>double</code></dt>
+<dt><strong><code>sample</code></strong> :&ensp;<code>float</code></dt>
 <dd>The sample value.</dd>
 <dt><strong><code>pos</code></strong> :&ensp;<code>int</code></dt>
 <dd>The key (position) of the new sample.</dd>
-<dt><strong><code>unit_size</code></strong> :&ensp;<code>int</code></dt>
-<dd>The size of the floating point data type (float=4, double=8) for the <code>sample</code> argument.</dd>
 <dt><strong><code>digits</code></strong> :&ensp;<code>int</code></dt>
 <dd>The total number of digits.</dd>
 <dt><strong><code>decimal_places</code></strong> :&ensp;<code>int</code></dt>
@@ -141,23 +139,23 @@ UiProxy.add_device_tab(dmm_dev)
 <h3>Methods</h3>
 <dl>
 <dt id="smuview.AnalogTimeSignal.get_last_sample"><code class="name flex">
-<span>def <span class="ident">get_last_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>,<br>relative_time: bool) ‑> tuple[float, float]</span>
+<span>def <span class="ident">get_last_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>,<br>relative_time: bool) ‑> tuple[float, float] | None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the last sample of the signal.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>relative_time</code></strong> :&ensp;<code>bool</code></dt>
-<dd>When <code>True</code>, the returned timestamp is relative to the start of the SmuView session.</dd>
+<dd>When <code>True</code> the returned timestamp is relative to the start of the SmuView session, else it is in seconds since epoc.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>Tuple[float, float]</code></dt>
-<dd>The sample with 1. timestamp in milliseconds and 2. the sample value.</dd>
+<dt><code>tuple[float, float]</code> or <code>None</code></dt>
+<dd>The sample with the timestamp in seconds (1) and the sample value (2) or <code>None</code> when there is no last sample.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.AnalogTimeSignal.get_sample"><code class="name flex">
-<span>def <span class="ident">get_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>,<br>pos: typing.SupportsInt | typing.SupportsIndex,<br>relative_time: bool) ‑> tuple[float, float]</span>
+<span>def <span class="ident">get_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>,<br>pos: typing.SupportsInt | typing.SupportsIndex,<br>relative_time: bool) ‑> tuple[float, float] | None</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Return the sample at the given position.</p>
@@ -166,27 +164,25 @@ UiProxy.add_device_tab(dmm_dev)
 <dt><strong><code>pos</code></strong> :&ensp;<code>int</code></dt>
 <dd>The position/number of the sample.</dd>
 <dt><strong><code>relative_time</code></strong> :&ensp;<code>bool</code></dt>
-<dd>When <code>True</code>, the returned timestamp is relative to the start of the SmuView session.</dd>
+<dd>When <code>True</code> the returned timestamp is relative to the start of the SmuView session, else it is in seconds since epoc.</dd>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>Tuple[float, float]</code></dt>
-<dd>The sample with 1. timestamp in milliseconds and 2. the sample value.</dd>
+<dt><code>tuple[float, float]</code> or <code>None</code></dt>
+<dd>The sample with the timestamp in seconds (1) and the sample value (2) or <code>None</code> when there is no sample at <code>pos</code>.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.AnalogTimeSignal.push_sample"><code class="name flex">
-<span>def <span class="ident">push_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>,<br>sample: Any,<br>timestamp: typing.SupportsFloat | typing.SupportsIndex,<br>unit_size: typing.SupportsInt | typing.SupportsIndex,<br>digits: typing.SupportsInt | typing.SupportsIndex,<br>decimal_places: typing.SupportsInt | typing.SupportsIndex)</span>
+<span>def <span class="ident">push_sample</span></span>(<span>self: <a title="smuview.AnalogTimeSignal" href="#smuview.AnalogTimeSignal">AnalogTimeSignal</a>,<br>sample: typing.SupportsFloat | typing.SupportsIndex,<br>timestamp: typing.SupportsFloat | typing.SupportsIndex,<br>digits: typing.SupportsInt | typing.SupportsIndex,<br>decimal_places: typing.SupportsInt | typing.SupportsIndex)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Push a new sample to the signal.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
-<dt><strong><code>sample</code></strong> :&ensp;<code>float</code> or <code>double</code></dt>
+<dt><strong><code>sample</code></strong> :&ensp;<code>float</code></dt>
 <dd>The sample value.</dd>
 <dt><strong><code>timestamp</code></strong> :&ensp;<code>float</code></dt>
-<dd>The absolute timestamp in milliseconds.</dd>
-<dt><strong><code>unit_size</code></strong> :&ensp;<code>int</code></dt>
-<dd>The size of the floating point data type (float=4, double=8) for the <code>sample</code> argument.</dd>
+<dd>The absolute timestamp in seconds since epoc.</dd>
 <dt><strong><code>digits</code></strong> :&ensp;<code>int</code></dt>
 <dd>The total number of digits.</dd>
 <dt><strong><code>decimal_places</code></strong> :&ensp;<code>int</code></dt>
@@ -222,17 +218,6 @@ UiProxy.add_device_tab(dmm_dev)
 </ul>
 <h3>Methods</h3>
 <dl>
-<dt id="smuview.BaseChannel.actual_signal"><code class="name flex">
-<span>def <span class="ident">actual_signal</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>) ‑> <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Return the actual signal of the channel.</p>
-<h2 id="returns">Returns</h2>
-<dl>
-<dt><code><a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a></code></dt>
-<dd>The actual signal object.</dd>
-</dl></div>
-</dd>
 <dt id="smuview.BaseChannel.add_signal"><code class="name flex">
 <span>def <span class="ident">add_signal</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>,<br>quantity: <a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a>,<br>quantity_flags: Set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>],<br>unit: <a title="smuview.Unit" href="#smuview.Unit">Unit</a>,<br>custom_name: str = '') ‑> <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a></span>
 </code></dt>
@@ -242,7 +227,7 @@ UiProxy.add_device_tab(dmm_dev)
 <dl>
 <dt><strong><code>quantity</code></strong> :&ensp;<code><a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a></code></dt>
 <dd>The <code><a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a></code> of the new signal.</dd>
-<dt><strong><code>quantity_flags</code></strong> :&ensp;<code>Set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>]</code></dt>
+<dt><strong><code>quantity_flags</code></strong> :&ensp;<code>set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>]</code></dt>
 <dd>The <code><a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a></code>s of the new signal.</dd>
 <dt><strong><code>unit</code></strong> :&ensp;<code><a title="smuview.Unit" href="#smuview.Unit">Unit</a></code></dt>
 <dd>The <code><a title="smuview.Unit" href="#smuview.Unit">Unit</a></code> of the new signal.</dd>
@@ -253,6 +238,17 @@ UiProxy.add_device_tab(dmm_dev)
 <dl>
 <dt><code><a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a></code></dt>
 <dd>The new signal object.</dd>
+</dl></div>
+</dd>
+<dt id="smuview.BaseChannel.current_signal"><code class="name flex">
+<span>def <span class="ident">current_signal</span></span>(<span>self: <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>) ‑> <a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the currently active signal of the channel.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code><a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a></code></dt>
+<dd>The current signal object.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.BaseChannel.name"><code class="name flex">
@@ -273,7 +269,7 @@ UiProxy.add_device_tab(dmm_dev)
 <div class="desc"><p>Return all signals of the channel.</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>List[<a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a>]</code></dt>
+<dt><code>list[<a title="smuview.BaseSignal" href="#smuview.BaseSignal">BaseSignal</a>]</code></dt>
 <dd>All signals of the channel.</dd>
 </dl></div>
 </dd>
@@ -321,8 +317,8 @@ UiProxy.add_device_tab(dmm_dev)
 <div class="desc"><p>Return all channels of the device.</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>Dict[str, <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>]</code></dt>
-<dd>A Dict where the key is the id of the channel and the value is the channel object.</dd>
+<dt><code>dict[str, <a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a>]</code></dt>
+<dd>A dict where the key is the id of the channel and the value is the channel object.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.BaseDevice.configurables"><code class="name flex">
@@ -332,8 +328,8 @@ UiProxy.add_device_tab(dmm_dev)
 <div class="desc"><p>Return all configurables of the device.</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>Dict[str, <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>]</code></dt>
-<dd>A Dict where the key is the id of the <code><a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a></code> and the value is the <code><a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a></code> object.</dd>
+<dt><code>dict[str, <a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a>]</code></dt>
+<dd>A dict where the key is the id of the <code><a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a></code> and the value is the <code><a title="smuview.Configurable" href="#smuview.Configurable">Configurable</a></code> object.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.BaseDevice.id"><code class="name flex">
@@ -826,7 +822,7 @@ over current protection (OCP) feature.</p></div>
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>Tuple[<a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a>, Set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>]]</code></dt>
+<dt><code>tuple[<a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a>, set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>]]</code></dt>
 <dd>The measured quantity value of the config key.</dd>
 </dl></div>
 </dd>
@@ -869,7 +865,7 @@ over current protection (OCP) feature.</p></div>
 <div class="desc"><p>Return all getable config keys.</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>List[<a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>]</code></dt>
+<dt><code>list[<a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>]</code></dt>
 <dd>All getable config keys.</dd>
 </dl></div>
 </dd>
@@ -880,7 +876,7 @@ over current protection (OCP) feature.</p></div>
 <div class="desc"><p>Return all listable config keys.</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>List[<a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>]</code></dt>
+<dt><code>list[<a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>]</code></dt>
 <dd>All listable config keys.</dd>
 </dl></div>
 </dd>
@@ -963,7 +959,7 @@ over current protection (OCP) feature.</p></div>
 <dl>
 <dt><strong><code>config_key</code></strong> :&ensp;<code><a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a></code></dt>
 <dd>The <code><a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a></code> to set.</dd>
-<dt><strong><code>value</code></strong> :&ensp;<code>Tuple[<a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a>, Set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>]]</code></dt>
+<dt><strong><code>value</code></strong> :&ensp;<code>tuple[<a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a>, set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>]]</code></dt>
 <dd>The measured quantity value to set.</dd>
 </dl></div>
 </dd>
@@ -974,7 +970,7 @@ over current protection (OCP) feature.</p></div>
 <div class="desc"><p>Return all setable config keys.</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>List[<a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>]</code></dt>
+<dt><code>list[<a title="smuview.ConfigKey" href="#smuview.ConfigKey">ConfigKey</a>]</code></dt>
 <dd>All setable config keys.</dd>
 </dl></div>
 </dd>
@@ -1115,8 +1111,8 @@ over current protection (OCP) feature.</p></div>
 <ul class="hlist">
 <li><code><b><a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a></b></code>:
 <ul class="hlist">
-<li><code><a title="smuview.BaseChannel.actual_signal" href="#smuview.BaseChannel.actual_signal">actual_signal</a></code></li>
 <li><code><a title="smuview.BaseChannel.add_signal" href="#smuview.BaseChannel.add_signal">add_signal</a></code></li>
+<li><code><a title="smuview.BaseChannel.current_signal" href="#smuview.BaseChannel.current_signal">current_signal</a></code></li>
 <li><code><a title="smuview.BaseChannel.name" href="#smuview.BaseChannel.name">name</a></code></li>
 <li><code><a title="smuview.BaseChannel.signals" href="#smuview.BaseChannel.signals">signals</a></code></li>
 </ul>
@@ -1598,8 +1594,8 @@ time.sleep(1)
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>List[<a title="smuview.HardwareDevice" href="#smuview.HardwareDevice">HardwareDevice</a>]</code></dt>
-<dd>A List with the newly connected device objects.</dd>
+<dt><code>list[<a title="smuview.HardwareDevice" href="#smuview.HardwareDevice">HardwareDevice</a>]</code></dt>
+<dd>A list with the newly connected device objects.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.Session.devices"><code class="name flex">
@@ -1610,8 +1606,8 @@ time.sleep(1)
 The device id is an (in almost all cases) unique string containing the manufacturer, the device model name and a more or less unique idenifier like the devices' serial number or the connection port (e.g. <code>COM5</code>, <code>/dev/ttyUSB2</code>).</p>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>Dict[str, <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>]</code></dt>
-<dd>A Dict where the key is the device id and the value is the device object.</dd>
+<dt><code>dict[str, <a title="smuview.BaseDevice" href="#smuview.BaseDevice">BaseDevice</a>]</code></dt>
+<dd>A dict where the key is the device id and the value is the device object.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.Session.remove_device"><code class="name flex">
@@ -1655,8 +1651,8 @@ The device id is an (in almost all cases) unique string containing the manufactu
 </dl>
 <h2 id="returns">Returns</h2>
 <dl>
-<dt><code>List[str]</code></dt>
-<dd>A List with the ids of the new views or an empty list if no control views were added.</dd>
+<dt><code>list[str]</code></dt>
+<dd>A list with the ids of the new views or an empty list if no control views were added.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.add_curve_to_time_plot_view"><code class="name flex">
@@ -1880,8 +1876,8 @@ When you have set a channel to the plot, new curves will be automatically create
 <dd>The id of the plot view.</dd>
 <dt><strong><code>curve_id</code></strong> :&ensp;<code>str</code></dt>
 <dd>The id of the curve.</dd>
-<dt><strong><code>color</code></strong> :&ensp;<code>Tuple[int, int, int]</code></dt>
-<dd>The color for the curve as a Tuple with the RGB values.</dd>
+<dt><strong><code>color</code></strong> :&ensp;<code>tuple[int, int, int]</code></dt>
+<dd>The color for the curve as a tuple with the RGB values.</dd>
 </dl></div>
 </dd>
 <dt id="smuview.UiProxy.set_curve_name"><code class="name flex">
@@ -1936,7 +1932,7 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 <span>def <span class="ident">show_int_input_dialog</span></span>(<span>self: <a title="smuview.UiProxy" href="#smuview.UiProxy">UiProxy</a>,<br>title: str,<br>label: str,<br>value: typing.SupportsInt | typing.SupportsIndex = 0,<br>step: typing.SupportsInt | typing.SupportsIndex = 1,<br>min: typing.SupportsInt | typing.SupportsIndex = -2147483648,<br>max: typing.SupportsInt | typing.SupportsIndex = 2147483647) ‑> object</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Show a dialog window to get an integer value from the user. It returns the entered float value or <code>None</code> if the Cancel button was pressed.</p>
+<div class="desc"><p>Show a dialog window to get an integer value from the user. It returns the entered integer value or <code>None</code> if the Cancel button was pressed.</p>
 <h2 id="parameters">Parameters</h2>
 <dl>
 <dt><strong><code>title</code></strong> :&ensp;<code>str</code></dt>
@@ -2211,10 +2207,10 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 <dt><strong><code>sample</code></strong> :&ensp;<code>float</code></dt>
 <dd>The sample value.</dd>
 <dt><strong><code>timestamp</code></strong> :&ensp;<code>float</code></dt>
-<dd>The absolute timestamp in milliseconds.</dd>
+<dd>The absolute timestamp in seconds since epoc.</dd>
 <dt><strong><code>quantity</code></strong> :&ensp;<code><a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a></code></dt>
 <dd>The <code><a title="smuview.Quantity" href="#smuview.Quantity">Quantity</a></code> of the new signal.</dd>
-<dt><strong><code>quantity_flags</code></strong> :&ensp;<code>Set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>]</code></dt>
+<dt><strong><code>quantity_flags</code></strong> :&ensp;<code>set[<a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a>]</code></dt>
 <dd>The <code><a title="smuview.QuantityFlag" href="#smuview.QuantityFlag">QuantityFlag</a></code>s of the new signal.</dd>
 <dt><strong><code>unit</code></strong> :&ensp;<code><a title="smuview.Unit" href="#smuview.Unit">Unit</a></code></dt>
 <dd>The <code><a title="smuview.Unit" href="#smuview.Unit">Unit</a></code> of the new signal.</dd>
@@ -2229,8 +2225,8 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 <ul class="hlist">
 <li><code><b><a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a></b></code>:
 <ul class="hlist">
-<li><code><a title="smuview.BaseChannel.actual_signal" href="#smuview.BaseChannel.actual_signal">actual_signal</a></code></li>
 <li><code><a title="smuview.BaseChannel.add_signal" href="#smuview.BaseChannel.add_signal">add_signal</a></code></li>
+<li><code><a title="smuview.BaseChannel.current_signal" href="#smuview.BaseChannel.current_signal">current_signal</a></code></li>
 <li><code><a title="smuview.BaseChannel.name" href="#smuview.BaseChannel.name">name</a></code></li>
 <li><code><a title="smuview.BaseChannel.signals" href="#smuview.BaseChannel.signals">signals</a></code></li>
 </ul>
@@ -2289,8 +2285,8 @@ Only has effect for Qt versions &gt;= 5.10!</dd>
 <li>
 <h4><code><a title="smuview.BaseChannel" href="#smuview.BaseChannel">BaseChannel</a></code></h4>
 <ul class="">
-<li><code><a title="smuview.BaseChannel.actual_signal" href="#smuview.BaseChannel.actual_signal">actual_signal</a></code></li>
 <li><code><a title="smuview.BaseChannel.add_signal" href="#smuview.BaseChannel.add_signal">add_signal</a></code></li>
+<li><code><a title="smuview.BaseChannel.current_signal" href="#smuview.BaseChannel.current_signal">current_signal</a></code></li>
 <li><code><a title="smuview.BaseChannel.name" href="#smuview.BaseChannel.name">name</a></code></li>
 <li><code><a title="smuview.BaseChannel.signals" href="#smuview.BaseChannel.signals">signals</a></code></li>
 </ul>
